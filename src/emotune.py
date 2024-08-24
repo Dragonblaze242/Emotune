@@ -62,7 +62,7 @@ class KivyCamera(Image):
     def update(self, bt=None):
         ret, frame = self.capture.read()
         if ret:
-            face_cascade = cv2.CascadeClassifier('models/haarcascade_frontalface_default.xml')
+            face_cascade = cv2.CascadeClassifier('../models/haarcascade_frontalface_default.xml')
             faces = face_cascade.detectMultiScale(cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY), 1.3, 4)
             for (x, y, w, h) in faces:
                 # To draw a rectangle in a face
@@ -108,7 +108,7 @@ class KivyCamera(Image):
 class EmoTune(App):
     def build(self):
         # Icon
-        self.icon = 'assets/logo.png'
+        self.icon = '../assets/logo.png'
         # Layout
         floatLayout = FloatLayout()
         horizontalLayout = BoxLayout(orientation='horizontal')
